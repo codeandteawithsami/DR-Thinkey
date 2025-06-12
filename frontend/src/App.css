@@ -1,0 +1,109 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c084fc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a855f7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Custom utilities */
+.hover-scale {
+  transition: transform 0.2s;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Form field focus styles */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+}
+
+/* Custom card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 hover-scale;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  @apply shadow-lg;
+}
+
+/* Custom button styles */
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-purple-600 text-white hover:bg-purple-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+}
+
+.btn-outline {
+  @apply border border-purple-500 text-purple-500 hover:bg-purple-50;
+}
+
+/* Tag styles */
+.tag {
+  @apply px-2 py-1 rounded-full text-xs;
+}
+
+/* Responsive layout helpers */
+.responsive-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+}
+
+/* Print styles - hide navigation and adjustment controls when printing */
+@media print {
+  nav, button, .adjust-controls {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
