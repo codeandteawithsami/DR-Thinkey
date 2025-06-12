@@ -67,3 +67,6 @@ htmlcov/
 # Database
 *.sqlite3
 *.db 
+
+# Word file
+Dr_Thinky_Project_Requirements.docx
