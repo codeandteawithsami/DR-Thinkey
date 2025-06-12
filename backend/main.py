@@ -1,6 +1,7 @@
 from pydantic import BaseModel
-from fastapi import FastAPI, Query
 from typing import List, Optional, Dict
+from fastapi import FastAPI, Query, Response
+from fastapi.responses import PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
 from Thinky_agent.Nutritionist import Nutritionist
 from Thinky_agent.Mood_Analyzer import Mood_Analyzer
@@ -57,6 +58,11 @@ class NutritionPlanRequest(BaseModel):
     goals: Optional[str] = None
 
 # Routes
+
+@app.get("/status", response_class=PlainTextResponse)
+async def health_check():
+    return "{Status: Live}"
+
 @app.post("/analyze-mood")
 def analyze_mood(req: MoodRequest):
     result = mood_analyzer.analyze_mood(topic=req.mood_text)
