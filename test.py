@@ -3,7 +3,7 @@ import json
 from pprint import pprint
 
 # API endpoint (assuming running locally)
-BASE_URL = "http://localhost:8000"
+BASE_URL = "http://localhost:8002"
 
 def test_thinky_agents():
     print("=== Testing Thinky Agents ===\n")

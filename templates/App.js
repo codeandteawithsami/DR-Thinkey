@@ -14,7 +14,7 @@ function App() {
   const [error, setError] = useState(null);
 
   // API config - would be in .env in a real app
-  const API_URL = 'http://localhost:8000';
+  const API_URL = 'http://localhost:8002';
 
   const analyzeMood = async (moodText) => {
     setIsLoading(true);
